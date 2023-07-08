@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-color: #333;
-  color: #ccc;
+body {
+  @apply bg-astro-gray-100 text-astro-gray-900 dark:bg-astro-gray-900 dark:text-astro-gray-100;
 }

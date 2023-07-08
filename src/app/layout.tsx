@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,10 +17,10 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className="dark" >
+      <body className={`${inter.className} .dark`}>
         <Navigation />
-        <h1>Hello</h1>
+
         {children}
       </body>
     </html>
