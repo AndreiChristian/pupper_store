@@ -13,6 +13,7 @@ const RaisedBtn: React.FC<ButtonProps> = ({ text, type, onClick }) => {
     warning: "from-astro-yellow-500 to-astro-yellow-300 hover:from-astro-yellow-700 hover:to-astro-yellow-500",
     success: "from-astro-green-500 to-astro-green-300 hover:from-astro-green-700 hover:to-astro-green-500",
   };
+
   return (
     <button
       onClick={onClick}

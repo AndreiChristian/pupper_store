@@ -9,7 +9,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, description, imageUrl }) => {
   return (
-    <div className="max-w-sm relative rounded overflow-hidden shadow-lg m-4 bg-astro-gray-100 dark:bg-astro-gray-900 transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-2xl">
+    <div className="max-w-sm relative rounded overflow-hidden shadow-lg m-4 bg-astro-gray-100 dark:bg-astro-blue transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-xl">
       <span className="relative">
         <Image
           className="w-full"
@@ -28,10 +28,11 @@ const Card: React.FC<CardProps> = ({ title, description, imageUrl }) => {
         </p>
       </div>
       <div className="px-6 py-4">
-        {/* you can add extra stuff here like tags, buttons etc. */}
+        {/* you can add extra stuff here like tags, buttons, etc. */}
       </div>
     </div>
   );
 };
 
 export default Card;
+

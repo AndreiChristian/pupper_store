@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-astro-gray-100 text-astro-gray-900 dark:bg-astro-gray-900 dark:text-astro-gray-100;
+  @apply bg-astro-gray-100 text-astro-gray-900 dark:bg-astro-blue dark:text-astro-blue-50;
 }
