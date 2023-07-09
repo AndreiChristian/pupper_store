@@ -1,3 +1,5 @@
+"use client";
+
 import { useDrawer } from "@/contexts/DrawerContext";
 import Link from "next/link";
 import { useEffect } from "react";

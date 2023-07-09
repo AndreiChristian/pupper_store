@@ -4,7 +4,6 @@ import Navigation from "@/components/Navigation";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { useEffect } from "react";
 import { DrawerProvider } from "@/contexts/DrawerContext";
 import Drawer from "@/components/SideDrawer";
 import Footer from "@/components/Footer";

@@ -1,3 +1,4 @@
+'use client'
 import { useDrawer } from "@/contexts/DrawerContext";
 
 const Drawer = () => {

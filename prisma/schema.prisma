@@ -1,11 +1,64 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
 
 generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+model Dog {
+  id          Int          @id @default(autoincrement())
+  name        String
+  description String
+  price       Float
+  breedId     Int
+  breed       Breed        @relation(fields: [breedId], references: [id])
+  categoryId  Int
+  category    Category     @relation(fields: [categoryId], references: [id])
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  orderItems  OrderItem[]
+}
+
+model Breed {
+  id    Int    @id @default(autoincrement())
+  name  String
+  dogs  Dog[]
+}
+
+model Category {
+  id    Int    @id @default(autoincrement())
+  name  String
+  dogs  Dog[]
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  orders    Order[]
+}
+
+model Order {
+  id         Int         @id @default(autoincrement())
+  userId     Int
+  user       User        @relation(fields: [userId], references: [id])
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  status     String      @default("Pending") // other options: "Paid", "Shipped", "Completed", "Cancelled"
+  orderItems OrderItem[]
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  dogId     Int
+  dog       Dog     @relation(fields: [dogId], references: [id])
+  orderId   Int
+  order     Order   @relation(fields: [orderId], references: [id])
+  quantity  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
