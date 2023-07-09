@@ -1,7 +1,6 @@
 import { useDrawer } from "@/contexts/DrawerContext";
 import Link from "next/link";
 import { useEffect } from "react";
-import RaisedBtn from "./RaisedButton";
 
 const Navigation = () => {
   const { closeDrawer, isDrawerOpen, openDrawer } = useDrawer();
@@ -38,18 +37,6 @@ const Navigation = () => {
           >
             About
           </Link>
-
-          <RaisedBtn
-            text="Toggle Drawer"
-            onClick={() => {
-              if (isDrawerOpen) {
-                closeDrawer();
-              } else {
-                openDrawer();
-              }
-            }}
-            type="accent"
-          />
         </div>
       </div>
     </nav>

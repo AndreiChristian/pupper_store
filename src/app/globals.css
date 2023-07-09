@@ -2,6 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-astro-gray-100 text-astro-gray-900 dark:bg-astro-blue dark:text-astro-blue-50;
-}
